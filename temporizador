@@ -1,12 +1,20 @@
-void main() {
-  animate (temporizador);
+int t1 = second ();
+
+void main (){
+  animate (ejecutar);
   
 }
-void temporizador (){
-  println(millis());
+
+void ejecutar (){
   
-}
-background(253,108,108);
-if (second()==5){
-  background(123,189,243);
+  int a = t1 - second ();
+  println (a);
+  
+  if (a<-5){
+    t1 =second ();
+    a = t1 - second ();
+    background(random (256),random (256), random(256));
+    
+  }
+  
 }
