@@ -5,6 +5,8 @@ void menu () {
   
   controlBTN1 ();
   imagenBTN1 ();
+  controlBTN2 ();
+  imagenBTN2 ();
 }
 void imagenBTN1 (){
   fill(173,255,163);
@@ -21,6 +23,24 @@ void controlBTN1 (){
     if (mouseButton == LEFTBUTTON){
       if (mouseX > 120 && mouseX < 200 && mouseY > 120 && mouseY < 200){
     background(75,174,255) ;
+      animate (play);
+      }}}}
+
+void imagenBTN2 (){
+  fill(239,93,48);
+  rect (35,30,35,30);
+  fill(0,0,0);
+  textSize(15);
+  text("PLAY", 137,170);
+}
+void controlBTN2 (){
+ // background(233,49,49);
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 35 && mouseX < 70 && mouseY > 30 && mouseY < 60){
+    background(13,155,24) ;
       animate (play);
       }}}}
 void imagenExit (){
