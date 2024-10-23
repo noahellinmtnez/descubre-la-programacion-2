@@ -12,7 +12,7 @@ void menu () {
 
 }
 void imagenBTN1 (){
-  fill(173,255,163);
+  fill(48,234,239);
   rect (120,120,80,80);
   fill(0,0,0);
   textSize(15);
@@ -30,11 +30,11 @@ void controlBTN1 (){
       }}}}
 
 void imagenBTN2 (){
-  fill(239,93,48);
-  rect (35,30,35,30);
+  fill(48,234,239);
+  rect (120,210,80,20);
   fill(0,0,0);
-  textSize(15);
-  text("PLAY", 137,170);
+  textSize(6);
+  text("INSTRUCCIONES", 128,223);
 }
 void controlBTN2 (){
  // background(233,49,49);
@@ -42,16 +42,16 @@ void controlBTN2 (){
   println ("Y: " + mouseY);
   if (mousePressed){
     if (mouseButton == LEFTBUTTON){
-      if (mouseX > 35 && mouseX < 70 && mouseY > 30 && mouseY < 60){
-    background(13,155,24) ;
+      if (mouseX > 120 && mouseX < 180 && mouseY > 210 && mouseY < 230){
+    background(206,112,251) ;
       animate (play);
       }}}}
 void imagenBTN3 (){
-  fill(239,93,48);
-  rect (90,50,90,50);
+  fill(48,234,239);
+  rect (120,240,80,20);
   fill(0,0,0);
-  textSize(15);
-  text("PLAY", 137,170);
+  textSize(6);
+  text("CRÉDITOS", 140,253);
 }
 void controlBTN3 (){
  // background(233,49,49);
@@ -59,7 +59,7 @@ void controlBTN3 (){
   println ("Y: " + mouseY);
   if (mousePressed){
     if (mouseButton == LEFTBUTTON){
-      if (mouseX > 90 && mouseX < 180 && mouseY > 50 && mouseY < 100){
+      if (mouseX > 120 && mouseX < 180 && mouseY > 240 && mouseY < 260){
     background(13,155,24) ;
       animate (play);
       }}}}
