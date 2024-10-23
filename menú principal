@@ -44,7 +44,7 @@ void controlBTN2 (){
     if (mouseButton == LEFTBUTTON){
       if (mouseX > 120 && mouseX < 180 && mouseY > 210 && mouseY < 230){
     background(206,112,251) ;
-      animate (play);
+      animate (INSTRUC);
       }}}}
 void imagenBTN3 (){
   fill(48,234,239);
@@ -61,7 +61,7 @@ void controlBTN3 (){
     if (mouseButton == LEFTBUTTON){
       if (mouseX > 120 && mouseX < 180 && mouseY > 240 && mouseY < 260){
     background(13,155,24) ;
-      animate (play);
+      animate (CREDIT);
       }}}}
 void imagenExit (){
   fill(76,245,241);
@@ -83,6 +83,22 @@ void controlExit (){
       }}}}
 void play (){
   background(255,131,249);
+  imagenExit();
+  controlExit();
+       if(mousePressed){}
+       if (mouseButton == LEFTBUTTON) {
+        }}
+
+void INSTRUC (){
+  background(124,255,116);
+  imagenExit();
+  controlExit();
+       if(mousePressed){}
+       if (mouseButton == LEFTBUTTON) {
+        }}
+
+void CREDIT (){
+  background(255,214,116);
   imagenExit();
   controlExit();
        if(mousePressed){}
