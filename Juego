@@ -1,0 +1,53 @@
+int puntos = 0; // Puntos del jugador
+int x = 200; // Posición inicial en x
+int y = 200; // Posición inicial en y
+PImage playerImage; // Variable para la imagen del jugador
+
+void setup() {
+  size(400, 400); // Tamaño de la ventana
+  playerImage = loadImage("player.png"); // Carga la imagen del jugador
+}
+
+void draw() {
+  background(215, 21, 223); // Color de fondo
+  mostrarPuntos(); // Muestra los puntos en pantalla
+  moverJugador(); // Maneja el movimiento del jugador
+  image(https:e7.pngegg.com/pngimages/902/370/png-clipart-concept-art-video-games-drawing-character-illustration-character-game-chibi.png, 25, 55)) // Dibuja la imagen del jugador
+}
+
+void mostrarPuntos() {
+  fill(255); // Color del texto
+  textSize(20); // Tamaño del texto
+  text("Puntos: " + puntos, 10, 30); // Muestra los puntos
+}
+
+void moverJugador() {
+  if (keyPressed) {
+    if (keyCode == UP) {
+      y -= 5; // Mueve hacia arriba
+      puntos++; // Gana puntos
+    }
+    if (keyCode == DOWN) {
+      y += 5; // Mueve hacia abajo
+      puntos--; // Pierde puntos
+    }
+    if (keyCode == LEFT) {
+      x -= 5; // Mueve hacia la izquierda
+      puntos++; // Gana puntos
+    }
+    if (keyCode == RIGHT) {
+      x += 5; // Mueve hacia la derecha
+      puntos--; // Pierde puntos
+    }
+  }
+
+  // Limitar el movimiento dentro de la ventana
+  x = constrain(x, 0, width - playerImage.width);
+  y = constrain(y, 0, height - playerImage.height);
+}
+
+void keyPressed() {
+  if (key == 'r') { // Reiniciar puntos
+    puntos = 0; // Reinicia los puntos
+  }
+}
