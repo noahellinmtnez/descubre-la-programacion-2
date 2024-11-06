@@ -1,53 +1,164 @@
-int puntos = 0; // Puntos del jugador
-int x = 200; // Posición inicial en x
-int y = 200; // Posición inicial en y
-PImage playerImage; // Variable para la imagen del jugador
+void main (){
+  animate (menu) ;
+}
+void menu () {
+  
+  controlBTN1 ();
+  imagenBTN1 ();
+  controlBTN2 ();
+  imagenBTN2 ();
+  controlBTN3 ();
+  imagenBTN3();
 
-void setup() {
-  size(400, 400); // Tamaño de la ventana
-  playerImage = loadImage("player.png"); // Carga la imagen del jugador
+}
+void imagenBTN1 (){
+  fill(116,194,247);
+  rect (120,120,80,80);
+  fill(0,0,0);
+  textSize(15);
+  text("PLAY", 137,170);
+}
+void controlBTN1 (){
+  background(227,225,225);
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 120 && mouseX < 200 && mouseY > 120 && mouseY < 200){
+      animate (ejecutar);
+      }}}}
+
+void imagenBTN2 (){
+  fill(116,194,247);
+  rect (120,210,80,20);
+  fill(0,0,0);
+  textSize(6);
+  text("INSTRUCCIONES", 128,223);
+}
+void controlBTN2 (){
+ // background(233,49,49);
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 120 && mouseX < 180 && mouseY > 210 && mouseY < 230){
+      animate (INSTRUC);
+      }}}}
+void imagenBTN3 (){
+  fill(116,194,247);
+  rect (120,240,80,20);
+  fill(0,0,0);
+  textSize(6);
+  text("CRÉDITOS", 140,253);
+}
+void controlBTN3 (){
+ // background(233,49,49);
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 120 && mouseX < 180 && mouseY > 240 && mouseY < 260){
+      animate (CREDIT);
+      }}}}
+void imagenExit (){
+  fill(0,32,255);
+  rect (10,10,10,10);
+  fill(0,0,0);
+  textSize(10);
+  text("Exit", 21,20);
+}
+void controlExit (){
+  //background(255,255,255);
+  println ("X: " + mouseX);
+  println ("Y: " + mouseY);
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 10 && mouseX < 20 && mouseY > 10 && mouseY < 20){
+      animate (menu);
+
+      }}}}
+void play (){
+  background(255,129,176);
+  imagenExit();
+  controlExit();
+       if(mousePressed){}
+       if (mouseButton == LEFTBUTTON) {
+        }}
+
+void INSTRUC (){
+  background(116,255,206);
+  imagenExit();
+  controlExit();
+  textSize(11);
+  text("INSTRUCCIONES DEL JUEGO", 55,55);
+  text("Movimiento: Utiliza las teclas de flecha", 26,105);
+  text("Acción: Presiona la tecla Espacio para saltar", 26,145);
+  text("Menú: Pulsa Esc para acceder al menú", 26,185);
+  text("Inventario: Usa I para abrir inventario", 26,225);
+       if(mousePressed){}
+       if (mouseButton == LEFTBUTTON) {
+        }}
+
+void CREDIT (){
+  background(243,165,255);
+  imagenExit();
+  controlExit();
+  textSize(12);
+    text("DE:Noah Hellín Martínez ", 35,150);
+    text("2 Bachillerato B ", 35,190);
+       if(mousePressed){}
+       if (mouseButton == LEFTBUTTON) {
+        }}
+
+
+
+
+
+
+int x= 160;
+int y= 160;
+
+
+void ejecutar () {
+  player ();
+  controles ();
 }
 
-void draw() {
-  background(215, 21, 223); // Color de fondo
-  mostrarPuntos(); // Muestra los puntos en pantalla
-  moverJugador(); // Maneja el movimiento del jugador
-  image(https:e7.pngegg.com/pngimages/902/370/png-clipart-concept-art-video-games-drawing-character-illustration-character-game-chibi.png, 25, 55)) // Dibuja la imagen del jugador
-}
 
-void mostrarPuntos() {
-  fill(255); // Color del texto
-  textSize(20); // Tamaño del texto
-  text("Puntos: " + puntos, 10, 30); // Muestra los puntos
+void player (){
+  background(215,21,223);
+  ellipse (x,y,10,15);
 }
-
-void moverJugador() {
-  if (keyPressed) {
-    if (keyCode == UP) {
-      y -= 5; // Mueve hacia arriba
-      puntos++; // Gana puntos
-    }
-    if (keyCode == DOWN) {
-      y += 5; // Mueve hacia abajo
-      puntos--; // Pierde puntos
-    }
-    if (keyCode == LEFT) {
-      x -= 5; // Mueve hacia la izquierda
-      puntos++; // Gana puntos
-    }
-    if (keyCode == RIGHT) {
-      x += 5; // Mueve hacia la derecha
-      puntos--; // Pierde puntos
-    }
+void controles (){
+  if (keyPressed && key=="up") {
+    print ("arriba");
+    y = y -1;
   }
-
-  // Limitar el movimiento dentro de la ventana
-  x = constrain(x, 0, width - playerImage.width);
-  y = constrain(y, 0, height - playerImage.height);
-}
-
-void keyPressed() {
-  if (key == 'r') { // Reiniciar puntos
-    puntos = 0; // Reinicia los puntos
+   if (keyPressed && key=="down") {
+    print ("abajo");
+    y = y +1;
   }
+ if (keyPressed && key=="left") {
+    print ("izquierda");
+    x = x -1;
+  }
+ if (keyPressed && key=="right") {
+    print ("derecha");
+    x = x +1;
+ }
+  if (x==0){
+    x=120;
+  }
+  if (y==0){
+    y=120;
+  }
+  if (x==320){
+    x=120;
+  }
+  if (y==320)
+    y=120;
+}
+void enemigo() {
+	ellipse(50,50, 300,20);
+        
 }
