@@ -1,3 +1,8 @@
+int x= 160;
+int y= 160;
+int z= random (320);
+int t = random (320);
+
 void main (){
   animate (menu) ;
 }
@@ -112,39 +117,34 @@ void CREDIT (){
 
 
 
-
-
-
-int x= 160;
-int y= 160;
-
-
 void ejecutar () {
   player ();
   controles ();
+  enemigo();
 }
 
 
 void player (){
-  background(215,21,223);
+  background(245,201,247);
   ellipse (x,y,10,15);
+  fill(253,19,19);
 }
 void controles (){
   if (keyPressed && key=="up") {
     print ("arriba");
-    y = y -1;
+    y = y -3;
   }
    if (keyPressed && key=="down") {
     print ("abajo");
-    y = y +1;
+    y = y +3;
   }
  if (keyPressed && key=="left") {
     print ("izquierda");
-    x = x -1;
+    x = x -3;
   }
  if (keyPressed && key=="right") {
     print ("derecha");
-    x = x +1;
+    x = x +3;
  }
   if (x==0){
     x=120;
@@ -158,7 +158,37 @@ void controles (){
   if (y==320)
     y=120;
 }
-void enemigo() {
+void jugador() {
 	ellipse(50,50, 300,20);
         
 }
+void enemigo() {
+	ellipse(z,t, 20,20);
+  fill(25,179,247);
+ 
+  z= z+1;
+  t=t+1;
+ 
+  
+  if (z<0){
+    x=10;
+  }
+  if (t <0){
+    t=10;
+}
+  if (z>320) {
+    z=10;
+  }
+  if (t>320) {
+    t=10;
+  }}
+
+//PUNTOS
+
+int puntos=0;
+void puntuacion(){
+  fill(0,0,0);
+text ("0 PUNTOS",10,20);
+}
+
+  
